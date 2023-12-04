@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby -w
 
 require "minitest/autorun"
-require_relative "day_1"
+require_relative "lib"
 
 class Part1Test < Minitest::Test
   def test_example_input
@@ -12,12 +12,12 @@ class Part1Test < Minitest::Test
       treb7uchet
     INPUT
 
-    assert_equal 142, Day1::Part1.run(input)
+    assert_equal 142, Day01::Part1.run(input)
   end
 
-  def test_input
+  def test_real_input
     input = File.read(File.join(__dir__, "input.txt"))
-    assert_equal 54644, Day1::Part1.run(input)
+    assert_equal 54644, Day01::Part1.run(input)
   end
 end
 
@@ -33,11 +33,11 @@ class Part2Test < Minitest::Test
       7pqrstsixteen
     INPUT
 
-    assert_equal 281, Day1::Part2.run(input)
+    assert_equal 281, Day01::Part2.run(input)
   end
 
-  def test_input
+  def test_real_input
     input = File.read(File.join(__dir__, "input.txt"))
-    assert_equal Day1::Part2.run(input), 53348
+    assert_equal Day01::Part2.run(input), 53348
   end
 end

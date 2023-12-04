@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby -w
 
-module Day2
+module Day02
   module Part1
     def self.run(input)
       input.split("\n").map do |line|
@@ -50,10 +50,4 @@ module Day2
 
     MAX_SCORES = {red: 12, green: 13, blue: 14}
   end
-end
-
-if __FILE__ == $0
-  input = File.read(File.join(__dir__, "input.txt"))
-  puts Day2::Part1.run(input)
-  puts Day2::Part2.run(input)
 end

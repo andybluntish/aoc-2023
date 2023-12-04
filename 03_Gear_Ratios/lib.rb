@@ -1,17 +1,16 @@
 #!/usr/bin/env ruby -w
-require "debug"
 
-module Day3
+module Day03
   module Part1
     def self.run(input)
-      Day3.find_parts_numbers(input).flatten.compact.map(&:value).sum
+      Day03.find_parts_numbers(input).flatten.compact.map(&:value).sum
     end
   end
 
   module Part2
     def self.run(input)
-      lines, width, height = Day3.parse_input(input)
-      parts_numbers = Day3.find_parts_numbers(input)
+      lines, width, height = Day03.parse_input(input)
+      parts_numbers = Day03.find_parts_numbers(input)
       gear_ratios = []
 
       lines.each_with_index do |line, y|
@@ -43,7 +42,7 @@ module Day3
 
     def find_parts_numbers(input)
       numbers = []
-      lines, width, height = Day3.parse_input(input)
+      lines, width, height = Day03.parse_input(input)
 
       lines.each_with_index do |line, y|
         number_buffer = ""
@@ -97,10 +96,4 @@ module Day3
       end
     end
   end
-end
-
-if __FILE__ == $0
-  input = File.read(File.join(__dir__, "input.txt"))
-  puts Day3::Part1.run(input)
-  puts Day3::Part2.run(input)
 end

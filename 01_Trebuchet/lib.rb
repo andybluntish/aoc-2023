@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby -w
 
-module Day1
+module Day01
   module Part1
     def self.run(input)
       input.split("\n").map do |line|
@@ -31,10 +31,4 @@ module Day1
       end
     end
   end
-end
-
-if __FILE__ == $0
-  input = File.read(File.join(__dir__, "input.txt"))
-  puts Day1::Part1.run(input)
-  puts Day1::Part2.run(input)
 end
