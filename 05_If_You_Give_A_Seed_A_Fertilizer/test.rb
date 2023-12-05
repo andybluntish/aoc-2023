@@ -51,9 +51,9 @@ class Part1Test < Minitest::Test
 end
 
 class Part2Test < Minitest::Test
-  # def test_example_input
-  #   assert_equal "XXX", Day05::Part2.run(INPUT)
-  # end
+  def test_example_input
+    assert_equal 46, Day05::Part2.run(INPUT)
+  end
 
   # def test_real_input
   #   input = File.read(File.join(__dir__, "input.txt"))

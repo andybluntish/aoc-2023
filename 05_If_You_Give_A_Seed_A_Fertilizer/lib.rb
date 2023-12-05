@@ -5,20 +5,30 @@ module Day05
   module Part1
     def self.run(input)
       seeds, maps = Day05.parse(input)
-      locations = seeds.map do |seed|
+      seeds.map do |seed|
         maps.each do |map|
           range = map.find { |m| m[:src].include?(seed) }
           seed = range[:dest].min + (seed - range[:src].min) if range
         end
         seed
-      end
-
-      locations.min
+      end.min
     end
   end
 
   module Part2
     def self.run(input)
+      seeds, maps = Day05.parse(input)
+      locations = seeds.each_slice(2).map do |start, length|
+        (start...(start + length)).map do |seed|
+          maps.each do |map|
+            range = map.find { |m| m[:src].include?(seed) }
+            seed = range[:dest].min + (seed - range[:src].min) if range
+          end
+          seed
+        end.min
+      end
+
+      locations.min
     end
   end
 
